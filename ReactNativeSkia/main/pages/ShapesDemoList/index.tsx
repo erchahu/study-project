@@ -8,10 +8,16 @@ import ShapesAtlasDemo from "./components/ShapesAtlasDemo";
 import ShapeVerticesDemo from "./components/ShapeVerticesDemo";
 import ShapePatchDemo from "./components/ShapePatchDemo";
 import ShapePicturesDemo from "./components/ShapePicturesDemo";
+import ShapePathDemo from "./components/ShapePathDemo";
+import ImageDemo from "./components/ImageDemo";
+import SkottieDemo from "./components/SkottieDemo";
 
 const ShapesDemoList = () => {
   return (
     <ScrollView>
+      <SkottieDemo />
+      <ImageDemo />
+      <ShapePathDemo />
       <ShapePicturesDemo />
       <ShapePatchDemo />
       <ShapeVerticesDemo />
