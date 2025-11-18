@@ -11,10 +11,12 @@ import ShapePicturesDemo from "./components/ShapePicturesDemo";
 import ShapePathDemo from "./components/ShapePathDemo";
 import ImageDemo from "./components/ImageDemo";
 import SkottieDemo from "./components/SkottieDemo";
+import TextDemo from "./components/TextDemo";
 
 const ShapesDemoList = () => {
   return (
-    <ScrollView>
+    <ScrollView style={{ marginTop: 80 }}>
+      <TextDemo />
       <SkottieDemo />
       <ImageDemo />
       <ShapePathDemo />
