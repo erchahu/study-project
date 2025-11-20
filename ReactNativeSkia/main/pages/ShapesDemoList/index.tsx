@@ -13,10 +13,12 @@ import ImageDemo from "./components/ImageDemo";
 import SkottieDemo from "./components/SkottieDemo";
 import TextDemo from "./components/TextDemo";
 import ShadersDemo from "./components/ShadersDemo";
+import ImageFilterDemo from "./components/ImageFilterDemo";
 
 const ShapesDemoList = () => {
   return (
     <ScrollView style={{ marginTop: 80 }}>
+      <ImageFilterDemo />
       <ShadersDemo />
       <TextDemo />
       <SkottieDemo />
