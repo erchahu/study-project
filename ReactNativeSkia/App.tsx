@@ -11,7 +11,8 @@ import { HelloWorld } from './main/study/day_2/Text';
 import { BottomNavigation } from 'react-native-paper';
 import { PathGroup } from './main/study/day_3/PathGroup';
 import { PathA } from './main/study/day_3/PathA';
-import ShapesDemoList from './main/pages/ShapesDemoList';
+import ShapesDemoList from './main/pages/ShapesDemoList1';
+import ShapesDemoList2 from './main/pages/ShapesDemoList2'
 
 const MusicRoute = () => (
   <>
@@ -31,7 +32,12 @@ const AlbumsRoute = () => (
   </>
 );
 
-const RecentsRoute = () => <PathA />;
+const RecentsRoute = () => (
+  <>
+    <ShapesDemoList2 />
+    <PathA />
+  </>
+);
 
 const NotificationsRoute = () => <ShapesDemoList />;
 
