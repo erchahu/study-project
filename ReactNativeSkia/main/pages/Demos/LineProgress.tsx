@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Canvas, Group, LinearGradient, Rect, vec } from "@shopify/react-native-skia";
 import { memo } from "react";
 import { Dimensions } from "react-native";
@@ -6,13 +6,12 @@ import { Easing, useDerivedValue, useSharedValue, withRepeat, withTiming } from 
 
 const { width } = Dimensions.get("screen");
 
-const COLORS = ["red", "orange", "yellow", "green", "cyan", "blue", "purple"];
+const COLORS = ["red", "orange", "yellow", "green", "cyan", "blue", "purple", "purple", "blue", "cyan", "green", "yellow", "orange", "red"];
 
 const HEIGHT = 20;
-const MARGIN = 100;
 const RECT_WIDTH = width; // 固定矩形宽度
 
-const Progress = () => {
+const LineProgress = () => {
   const translateX = useSharedValue(0); // 从左侧开始
 
   useEffect(() => {
@@ -27,38 +26,31 @@ const Progress = () => {
     { translateX: translateX.value - RECT_WIDTH }
   ]);
 
+  const RectCom = useMemo(() => (
+    <Rect 
+      x={0} 
+      y={0} 
+      width={RECT_WIDTH} 
+      height={HEIGHT}
+    >
+      <LinearGradient
+        start={vec(0, 0)}
+        end={vec(RECT_WIDTH, HEIGHT)}
+        colors={COLORS}
+      />
+    </Rect>
+  ), [])
+
   return (
-    <Canvas style={{ width, height: 300, backgroundColor: '#b3e275' }}>
+    <Canvas style={{ width, height: HEIGHT }}>
       <Group transform={transform}>
-        <Rect 
-          x={0} 
-          y={MARGIN} 
-          width={RECT_WIDTH} 
-          height={HEIGHT}
-        >
-          <LinearGradient
-            start={vec(0, 0)}
-            end={vec(RECT_WIDTH, HEIGHT)}
-            colors={COLORS}
-          />
-        </Rect>
+        {RectCom}
       </Group>
       <Group transform={transform2}>
-        <Rect 
-          x={0} 
-          y={MARGIN} 
-          width={RECT_WIDTH} 
-          height={HEIGHT}
-        >
-          <LinearGradient
-            start={vec(0, 0)}
-            end={vec(RECT_WIDTH, HEIGHT)}
-            colors={COLORS}
-          />
-        </Rect>
+        {RectCom}
       </Group>
     </Canvas>
   );
 }
 
-export default memo(Progress);
+export default memo(LineProgress);
