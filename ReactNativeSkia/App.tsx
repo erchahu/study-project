@@ -13,6 +13,7 @@ import { PathGroup } from './main/study/day_3/PathGroup';
 import { PathA } from './main/study/day_3/PathA';
 import ShapesDemoList from './main/pages/ShapesDemoList1';
 import ShapesDemoList2 from './main/pages/ShapesDemoList2'
+import Demos from './main/pages/Demos';
 
 const MusicRoute = () => (
   <>
@@ -28,6 +29,7 @@ const MusicRoute = () => (
 
 const AlbumsRoute = () => (
   <>
+    <Demos />
     <PathGroup />
   </>
 );
