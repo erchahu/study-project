@@ -11,7 +11,7 @@ export const PathGroup = () => {
 
   // ☆
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ height: 600 }}>
       <Canvas style={{ flex: 1, backgroundColor: '#f6eedd' }}>
         {/* <Path path={"M 100 100 L 20 200 L 300 300 Z"} /> */}
 

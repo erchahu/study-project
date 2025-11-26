@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { Canvas, Circle, Group } from "@shopify/react-native-skia";
 import { memo } from "react";
 import { Dimensions } from "react-native";
@@ -16,7 +16,7 @@ const SpinProfress = () => {
   const rotation = useSharedValue(0);
 
   useEffect(() => {
-    rotation.value = withRepeat(withTiming(360, { duration: 100000, easing: Easing.linear }), -1)
+    rotation.value = withRepeat(withTiming(2 * Math.PI, { duration: 3000, easing: Easing.linear }), -1)
   }, [rotation]);
 
   const transform = useDerivedValue(() => [

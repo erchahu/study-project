@@ -1,4 +1,4 @@
-import { StatusBar, useColorScheme, View } from 'react-native';
+import { ScrollView, StatusBar, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
@@ -28,10 +28,10 @@ const MusicRoute = () => (
 );
 
 const AlbumsRoute = () => (
-  <>
+  <ScrollView>
     <Demos />
     <PathGroup />
-  </>
+  </ScrollView>
 );
 
 const RecentsRoute = () => (
